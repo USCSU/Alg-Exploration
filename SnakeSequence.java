@@ -169,3 +169,4 @@ public class SnakeSeq {
         return max;
     }
 }
+
