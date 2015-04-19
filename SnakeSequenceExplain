@@ -1,0 +1,21 @@
+Get longest snake sequence
+Two scenarios and Four solutions provided:
+Scenario 1: can only move right side and down side
+Scenario 2: can move four directions: up, down, left, right
+Solution 1: Recursive to explore every path( Requirement: each adjacent node on that path is value- one - gap from another)
+For scenario2: use boolean checker to eliminate cycle.
+Solution 2: Dynamic programming to explore every path
+
+For scenario 1: 
+Dp equation:
+dp(i,j) --> current longest sequence at current point
+Dp transition equation:
+dp(i,j) = max(gap=1?dp(i,j+1):1, gap == 1?dp(i+1,j):1)+1;
+
+Time complexity: O(MN) Space: O(MN)
+
+For Scenario 2: four direction:
+do dp from top-left to bottom-right
+do dp from bottom -right to top-left
+respectively. 
+combine them by add values on each cell to get max val; all the cell tagged with max val is the longest snake cells, and the value is the longest sequence length.
